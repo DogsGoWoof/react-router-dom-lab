@@ -20,8 +20,9 @@ const LetterForm = ({ mailboxes, addLetter }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         addLetter(formData);
-        setFormData(initialState);
-        navigate(`/mailboxes/${formData.mailboxId}`);
+        formData.mailboxId !== 0 ? setFormData(initialState) : null;
+        formData.mailboxId !== 0 ? navigate(`/mailboxes/${formData.mailboxId}`) : null;
+        // ternaries to prevent form submission if mailboxId isn't valid-ish
     };
 
     const handleChange = ({ target }) => {
@@ -43,7 +44,7 @@ const LetterForm = ({ mailboxes, addLetter }) => {
                     onChange={handleChange}
                     required={true}
                 >
-                    <option key="unaddressed" value="" selected disabled>Please choose a mailbox address</option>
+                    <option key="unaddressed" value={0} selected disabled>Please choose a mailbox address</option>
                     {
                         mailboxes.map((mailbox) => (
                             <option key={mailbox._id} value={mailbox._id}>{mailbox._id}</option>
