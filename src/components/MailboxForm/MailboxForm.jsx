@@ -21,7 +21,6 @@ const MailboxForm = (props) => {
 
     const handleChange = ({ target }) => {
         setFormData({ ...formData, [target.name]: target.value });
-        console.log(target);
     };
 
     return (

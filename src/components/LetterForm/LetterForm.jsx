@@ -28,8 +28,6 @@ const LetterForm = ({ mailboxes, addLetter }) => {
     const handleChange = ({ target }) => {
         setFormData({ ...formData, [target.name]: target.value });
         mailbox = mailboxes.find((mail) => mail._id === Number(formData.mailboxId));
-        console.log('Mailbox Object:', mailbox)
-        console.log(target);
     };
 
     return (
@@ -44,14 +42,14 @@ const LetterForm = ({ mailboxes, addLetter }) => {
                     onChange={handleChange}
                     required={true}
                 >
-                    <option key="unaddressed" value={0} selected disabled>Please choose a mailbox address</option>
+                    <option key="unaddressed" value={0}  disabled>Please choose a mailbox address</option>
                     {
                         mailboxes.map((mailbox) => (
                             <option key={mailbox._id} value={mailbox._id}>{mailbox._id}</option>
                         ))
                     }
                 </select>
-                <label htmlFor="recipient">Box Holder:</label>
+                <label htmlFor="recipient">Recipient:</label>
                 <input
                     type="text"
                     id="recipient"

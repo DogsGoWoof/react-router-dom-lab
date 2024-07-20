@@ -6,12 +6,7 @@ const MailboxDetails = (props) => {
     const selectedLetters = props.letters.filter(
       (letter) => Number(letter.mailboxId )=== Number(mailboxId)
     );
-    console.log(selectedLetters)
-    // console.log('mailboxId:', mailboxId);
     const mailbox = props.mailboxes.find((mail) => mail._id === Number(mailboxId));
-    // console.log('Mailbox Object:', mailbox)
-    console.log(props.letters);
-
     return (
         <>
             {
@@ -27,8 +22,8 @@ const MailboxDetails = (props) => {
                             <dd>{mailbox.boxSize}</dd>
                             <dt>Letters:</dt>
                             {
-                            selectedLetters.map((letter) => (
-                                <div className='mailedLetter'>
+                            selectedLetters.map((letter, index) => (
+                                <div key={index} className='mailedLetter'>
                                     <dd>To: {letter.recipient}</dd>
                                     <dd>Subject: {letter.subject}</dd>
                                     <dd>{letter.message}</dd>
