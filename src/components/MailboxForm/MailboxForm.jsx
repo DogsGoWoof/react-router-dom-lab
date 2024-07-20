@@ -14,7 +14,6 @@ const MailboxForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // TODO : complete submit logic
         props.addBox(formData);
         setFormData(initialState);
         navigate('/mailboxes');
@@ -48,13 +47,6 @@ const MailboxForm = (props) => {
                     <option value="Medium">Medium</option>
                     <option value="Large">Large</option>
                 </select>
-                {/* <input
-                    type="text"
-                    id="boxholder"
-                    name="boxholder"
-                    value={formData.boxholder}
-                    onChange={handleChange}
-                /> */}
                 <button type="submit">Submit</button>
             </form>
         </main>

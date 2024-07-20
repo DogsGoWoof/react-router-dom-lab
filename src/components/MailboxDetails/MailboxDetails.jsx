@@ -24,13 +24,6 @@ const MailboxDetails = (props) => {
                     </>
                     : <h1>Mailbox Not Found!</h1>
             }
-            {/* <h2>{mailbox.name}</h2>
-            <dl>
-                <dt>Box Size:</dt>
-                <dd>{mailbox.boxSize}</dd>
-                <dt>Box Holder:</dt>
-                <dd>{mailbox.boxholder}</dd>
-            </dl> */}
         </>
     );
 };
