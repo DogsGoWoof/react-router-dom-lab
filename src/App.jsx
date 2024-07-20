@@ -8,6 +8,7 @@ import MailboxList from './components/MailboxList/MailboxList';
 import MailboxDetails from './components/MailboxDetails/MailboxDetails';
 import MailboxForm from './components/MailboxForm/MailboxForm';
 
+import './App.css';
 
 const App = () => {
 
@@ -22,7 +23,7 @@ const App = () => {
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<h2>Home Page</h2>} />
+        <Route path="/" element={<h2>Post Office</h2>} />
         <Route path="/mailboxes" element={<MailboxList mailboxes={mailboxes} />} />
         <Route
           path="/mailboxes/:mailboxId"

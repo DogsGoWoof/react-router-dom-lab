@@ -3,6 +3,9 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
 }
 
 .logo {
@@ -39,4 +42,29 @@
 
 .read-the-docs {
   color: #888;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mailboxNumber {
+  color: white;
+  font-size: 4dvh;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-shadow: 0 0 .1dvh black;
+  border: 1dvh ridge gray;
+  outline: .5dvh solid black;
+  width: 10dvw;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  background: no-repeat linear-gradient(gray 20%, black 20%, black 30%, gray 30%);
+  background-size: 70%;
+  background-position: 50% 50%;
+  background-color: gray;
+  padding: 3dvh;
 }

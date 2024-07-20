@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const initialState = {
-    boxSize: '',
     boxholder: '',
+    boxSize: 'Small',
 };
 
 const MailboxForm = (props) => {
@@ -22,21 +22,14 @@ const MailboxForm = (props) => {
 
     const handleChange = ({ target }) => {
         setFormData({ ...formData, [target.name]: target.value });
+        console.log(target);
     };
 
     return (
         <main>
             <h2>New Mailbox</h2>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="boxSize">Box Size:</label>
-                <input
-                    type="text"
-                    id="boxSize"
-                    name="boxSize"
-                    value={formData.boxSize}
-                    onChange={handleChange}
-                />
-                <label htmlFor="boxholder">Box Holder:</label>
+                <label htmlFor="boxSize">Box Holder:</label>
                 <input
                     type="text"
                     id="boxholder"
@@ -44,6 +37,24 @@ const MailboxForm = (props) => {
                     value={formData.boxholder}
                     onChange={handleChange}
                 />
+                <label htmlFor="boxholder">Box Size:</label>
+                <select
+                    id="boxSize"
+                    name="boxSize"
+                    value={formData.boxSize}
+                    onChange={handleChange}                
+                >
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                </select>
+                {/* <input
+                    type="text"
+                    id="boxholder"
+                    name="boxholder"
+                    value={formData.boxholder}
+                    onChange={handleChange}
+                /> */}
                 <button type="submit">Submit</button>
             </form>
         </main>
