@@ -32,10 +32,10 @@ const App = () => {
         <Route path="/mailboxes" element={<MailboxList mailboxes={mailboxes} />} />
         <Route
           path="/mailboxes/:mailboxId"
-          element={<MailboxDetails mailboxes={mailboxes} />}
+          element={<MailboxDetails mailboxes={mailboxes} letters={letters} />}
         />
         <Route path="/new-mailbox" element={<MailboxForm addBox={addBox} />} />
-        <Route path="/new-letter" element={<LetterForm mailboxes={mailboxes} setMailboxes={setMailboxes} addLetter={addLetter} />} />
+        <Route path="/new-letter" element={<LetterForm mailboxes={mailboxes} addLetter={addLetter} />} />
         <Route path="*" element={<h2>Whoops, nothing here!</h2>} />
 
       </Routes>

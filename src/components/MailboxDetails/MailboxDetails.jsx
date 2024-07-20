@@ -3,9 +3,14 @@ import { useParams } from 'react-router-dom';
 const MailboxDetails = (props) => {
 
     const { mailboxId } = useParams();
-    console.log('mailboxId:', mailboxId);
+    const selectedLetters = props.letters.filter(
+      (letter) => Number(letter.mailboxId )=== Number(mailboxId)
+    );
+    console.log(selectedLetters)
+    // console.log('mailboxId:', mailboxId);
     const mailbox = props.mailboxes.find((mail) => mail._id === Number(mailboxId));
-    console.log('Mailbox Object:', mailbox)
+    // console.log('Mailbox Object:', mailbox)
+    console.log(props.letters);
 
     return (
         <>
@@ -20,6 +25,16 @@ const MailboxDetails = (props) => {
                             <dd>{mailbox.boxholder}</dd>
                             <dt>Box Size:</dt>
                             <dd>{mailbox.boxSize}</dd>
+                            <dt>Letters:</dt>
+                            {
+                            selectedLetters.map((letter) => (
+                                <div className='mailedLetter'>
+                                    <dd>To: {letter.recipient}</dd>
+                                    <dd>Subject: {letter.subject}</dd>
+                                    <dd>{letter.message}</dd>
+                                </div>
+                            ))
+                            }
                         </dl>
                     </>
                     : <h1>Mailbox Not Found!</h1>
