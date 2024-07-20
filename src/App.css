@@ -87,3 +87,13 @@ dd {
   flex-flow: column wrap;
   align-items: start;
 }
+
+.keyhole {
+  border: .5dvh solid darkgrey;
+  border-radius: 50%;
+  width: 3dvw;
+  aspect-ratio: 1;
+  background: linear-gradient(90deg, #444 45%, #1e1e1e 45%, #1e1e1e 55%, #444 55%);
+  position: absolute;
+  translate: 0 2dvh;
+}

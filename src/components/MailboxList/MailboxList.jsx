@@ -10,6 +10,7 @@ const MailboxList = (props) => {
                         <li key={currentMailbox.boxholder}>
                             <Link to={`/mailboxes/${currentMailbox._id}`} className='mailboxNumber'>
                                 {currentMailbox._id}
+                                <div className='keyhole'></div>
                             </Link>
                         </li>
                     ))
