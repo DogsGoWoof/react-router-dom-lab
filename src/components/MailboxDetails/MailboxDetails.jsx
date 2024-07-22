@@ -4,7 +4,7 @@ const MailboxDetails = (props) => {
 
     const { mailboxId } = useParams();
     const selectedLetters = props.letters.filter(
-      (letter) => Number(letter.mailboxId )=== Number(mailboxId)
+        (letter) => Number(letter.mailboxId) === Number(mailboxId)
     );
     const mailbox = props.mailboxes.find((mail) => mail._id === Number(mailboxId));
     return (
@@ -21,15 +21,20 @@ const MailboxDetails = (props) => {
                             <dt>Box Size:</dt>
                             <dd>{mailbox.boxSize}</dd>
                             <dt>Letters:</dt>
+                            <div>
                             {
-                            selectedLetters.map((letter, index) => (
-                                <div key={index} className='mailedLetter'>
-                                    <dd>To: {letter.recipient}</dd>
-                                    <dd>Subject: {letter.subject}</dd>
-                                    <dd>{letter.message}</dd>
-                                </div>
-                            ))
+                                selectedLetters.length ?
+                                    selectedLetters.map((letter, index) => (
+                                        <div key={index} className='mailedLetter'>
+                                            <dd>To: {letter.recipient}</dd>
+                                            <dd>Subject: {letter.subject}</dd>
+                                            <hr />
+                                            <dd>{letter.message}</dd>
+                                        </div>
+                                    ))
+                                    : <h3>No Letters</h3>
                             }
+                            </div>
                         </dl>
                     </>
                     : <h1>Mailbox Not Found!</h1>

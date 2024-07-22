@@ -28,7 +28,14 @@ const App = () => {
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<h2>Post Office</h2>} />
+        <Route path="/" element={(
+          <>
+            <h2>Post Office</h2>
+            <div id="div-letter">
+              <div id="letter-top-flap"></div>
+            </div>
+          </>
+        )} />
         <Route path="/mailboxes" element={<MailboxList mailboxes={mailboxes} />} />
         <Route
           path="/mailboxes/:mailboxId"
