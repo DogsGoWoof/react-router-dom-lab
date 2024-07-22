@@ -48,7 +48,7 @@
 }
 
 body {
-  background: linear-gradient(white 9%, blue 9%, blue 10%, red 10%, red 89%, blue 89%, blue 90%, white 90%);
+  background: linear-gradient(white 9dvh, blue 9dvh, blue 11dvh, red 11dvh, red 94%, blue 94%, blue 95%, white 95%);
 }
 
 h1, h2 {
@@ -188,4 +188,11 @@ hr {
   position: fixed;
   top: -15dvh;
   left: -30dvh;
+}
+
+select, input, textarea {
+  outline: .5dvh solid white;
+  border-radius: 0;
+  filter: drop-shadow(0 0 1dvh black);
+  font-weight: bold;
 }
