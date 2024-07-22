@@ -32,7 +32,7 @@ const LetterForm = ({ mailboxes, addLetter }) => {
 
     return (
         <main>
-            <h2>New Mailbox</h2>
+            <h2>New Letter</h2>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="mailboxId">Box Address:</label>
                 <select

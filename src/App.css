@@ -47,10 +47,21 @@
   color: #888;
 }
 
+body {
+  background: linear-gradient(white 9%, blue 9%, blue 10%, red 10%, red 89%, blue 89%, blue 90%, white 90%);
+}
+
+h1, h2 {
+  text-shadow: .3dvw .7dvh black;
+  color: white;
+  translate: 0 3dvh;
+}
+
 nav {
   border: 1dvh ridge #b22727;
   padding: 0 1dvw;
   background: blue;
+  filter: drop-shadow(0 1dvh 1dvh black);
 }
 
 nav > ul > li {
@@ -157,12 +168,13 @@ hr {
   outline: .5dvh solid black;
   filter: drop-shadow(0 0 .1dvh white);
   position: fixed;
-  top: 30dvh;
+  top: 40dvh;
   transition: all linear 1s;
 }
 
 #div-letter:hover {
   translate: 100dvw;
+  cursor: none;
 }
 
 #letter-top-flap {
@@ -171,7 +183,7 @@ hr {
   border-left-color: transparent;
   border-bottom-color: transparent;
   border-right-color: transparent;
-  filter: drop-shadow(0 0 .2dvh black);
+  filter: drop-shadow(0 0 .4dvh black);
   margin: 0;
   position: fixed;
   top: -15dvh;
