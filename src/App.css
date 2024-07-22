@@ -47,6 +47,27 @@
   color: #888;
 }
 
+nav {
+  border: 1dvh ridge #b22727;
+  padding: 0 1dvw;
+  background: blue;
+}
+
+nav > ul > li {
+  margin: 0 1dvw;
+  font-weight: 900;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  padding: 1dvh;
+}
+
+a:hover {
+  outline: 2px solid white;
+}
+
 .mailboxNumber {
   color: white;
   font-size: 4dvh;
@@ -112,6 +133,11 @@ dl > div {
   aspect-ratio: 1;
   background: linear-gradient(90deg, #444 45%, #1e1e1e 45%, #1e1e1e 55%, #444 55%);
   translate: 0 2dvh;
+  transition: all linear .3s;
+}
+
+.keyhole:hover {
+  rotate: 90deg;
 }
 
 p {
@@ -128,10 +154,15 @@ hr {
   border-top: 15dvh solid #dadada;
   border-left: 30dvh solid white;
   border-right: 30dvh solid white;
-  outline: 1px solid black;
-  filter: drop-shadow(0 0 1dvh black);
+  outline: .5dvh solid black;
+  filter: drop-shadow(0 0 .1dvh white);
   position: fixed;
   top: 30dvh;
+  transition: all linear 1s;
+}
+
+#div-letter:hover {
+  translate: 100dvw;
 }
 
 #letter-top-flap {
@@ -140,7 +171,7 @@ hr {
   border-left-color: transparent;
   border-bottom-color: transparent;
   border-right-color: transparent;
-  filter: drop-shadow(0 0 .1dvh black);
+  filter: drop-shadow(0 0 .2dvh black);
   margin: 0;
   position: fixed;
   top: -15dvh;

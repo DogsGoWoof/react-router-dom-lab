@@ -30,7 +30,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={(
           <>
-            <h2>Post Office</h2>
+            <h1>Post Office</h1>
             <div id="div-letter">
               <div id="letter-top-flap"></div>
             </div>
